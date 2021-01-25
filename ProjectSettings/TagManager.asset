@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Console
+    uniqueID: 2705213569
+    locked: 0
+  - name: Screen
+    uniqueID: 1148806987
+    locked: 0
   - name: Arrows
     uniqueID: 2619207781
     locked: 0
