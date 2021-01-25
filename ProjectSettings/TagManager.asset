@@ -45,3 +45,6 @@ TagManager:
   - name: Arrows
     uniqueID: 2619207781
     locked: 0
+  - name: GAMEWATCH BUTTON
+    uniqueID: 3739621473
+    locked: 0
