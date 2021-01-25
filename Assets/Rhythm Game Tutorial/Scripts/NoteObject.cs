@@ -5,6 +5,21 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
 
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    Debug.Log("Object Entered the trigger");
+    //}
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log("Object is within the trigger");
+    }
+
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    Debug.Log("Object Exited the trigger");
+    //}
+
     public bool canBePressed;
 
     public KeyCode keyToPress;
