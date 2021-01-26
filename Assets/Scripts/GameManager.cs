@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     public AudioSource theMusic;
 
+    public AudioSource audioSource;
+    public AudioClip[] audioClipArray;
+    AudioClip lastClip;
+
     public bool startPlaying;
 
     public BeatScroller theBS;
@@ -48,6 +52,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    AudioClip RandomClip()
+    {
+        int attempts = 3;
+        AudioClip newClip = audioClipArray[Random.Range(0, audioClipArray.Length)];
+
+        while (newClip == lastClip && attempts > 0)
+        {
+            newClip = audioClipArray[Random.Range(0, audioClipArray.Length)];
+            attempts--;
+        }
+
+        lastClip = newClip;
+        return newClip;
+    }
+
     public void NoteHit()
     {
         Debug.Log("Hit On Time");
@@ -66,7 +85,9 @@ public class GameManager : MonoBehaviour
 
         currentScore += scorePerNote; /** currentMultiplier;*/
         scoreText.text = "Score: " + currentScore;
-            //}
+
+        audioSource.PlayOneShot(RandomClip());
+        //}
     }
 
     public void NoteMissed()
