@@ -6,7 +6,7 @@ public class ArrowTrigger : MonoBehaviour
 {
 
     private SpriteRenderer arrowRenderer;
-    public Sprite defaultImage;
+    public Sprite noImage;
     public Sprite revealedImage;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,11 +16,12 @@ public class ArrowTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        arrowRenderer.sprite = defaultImage;
+        arrowRenderer.sprite = noImage;
     }
 
     void Start()
     {
         arrowRenderer = GetComponent<SpriteRenderer>();
+        arrowRenderer.sprite = noImage;
     }
 }

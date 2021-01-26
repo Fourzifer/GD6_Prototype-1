@@ -54,3 +54,6 @@ TagManager:
   - name: Buttons
     uniqueID: 2677473809
     locked: 0
+  - name: Poses
+    uniqueID: 3176462241
+    locked: 0
