@@ -42,9 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Console
+    uniqueID: 2705213569
+    locked: 0
+  - name: Screen
+    uniqueID: 1148806987
+    locked: 0
   - name: Arrows
     uniqueID: 2619207781
     locked: 0
-  - name: GAMEWATCH BUTTON
-    uniqueID: 3739621473
+  - name: Buttons
+    uniqueID: 2677473809
+    locked: 0
+  - name: Poses
+    uniqueID: 3176462241
     locked: 0
