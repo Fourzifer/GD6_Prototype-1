@@ -5,30 +5,8 @@ using UnityEngine;
 public class NoteObject : MonoBehaviour
 {
 
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    Debug.Log("Object Entered the trigger");
-    //}
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        Debug.Log("Object is within the trigger");
-    }
-
-    //private void OnTriggerExit2D(Collider2D other)
-    //{
-    //    Debug.Log("Object Exited the trigger");
-    //}
-
     public bool canBePressed;
-
     public KeyCode keyToPress;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -48,6 +26,7 @@ public class NoteObject : MonoBehaviour
     {
         if(other.tag == "Activator")
         {
+            Debug.Log("Object entered the trigger");
             canBePressed = true;
         }
     }
@@ -61,6 +40,8 @@ public class NoteObject : MonoBehaviour
             canBePressed = false;
 
             GameManager.instance.NoteMissed();
+
+            gameObject.SetActive(false);
         }
     }
     }
