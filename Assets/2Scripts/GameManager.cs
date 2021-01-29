@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    GameObject startText;
+    GameObject poseFail;
+
     public AudioSource theMusic;
 
     public AudioSource audioSource;
@@ -35,6 +38,10 @@ public class GameManager : MonoBehaviour
 
         scoreText.text = "Score: " + currentScore;
         //currentMultiplier = 1;
+
+        startText = GameObject.Find("StartText");
+        poseFail = GameObject.Find("PoseFail");
+        poseFail.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,6 +55,8 @@ public class GameManager : MonoBehaviour
                 theBS.hasStarted = true;
 
                 theMusic.Play();
+
+                startText.SetActive(false);
             }
         }
     }
@@ -98,5 +107,13 @@ public class GameManager : MonoBehaviour
         //multiplierTracker = 0;
 
         //multiText.text = "Multiplier: x" + currentMultiplier;
+
+        //int x = 3;
+
+        //for (int i = 0; i < x; i++)
+        //{
+        //    Debug.Log("Creating enemy number: " + i);
+        //}
+        //poseFail.SetActive(true);
     }
 }
