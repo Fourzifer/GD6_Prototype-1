@@ -103,17 +103,19 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Missed Note");
 
+        poseFail.SetActive(true);
+
         //currentMultiplier = 1;
         //multiplierTracker = 0;
 
         //multiText.text = "Multiplier: x" + currentMultiplier;
 
-        //int x = 3;
+        StartCoroutine(ShowFail());
+        IEnumerator ShowFail()
+        {
+            yield return new WaitForSeconds(1);
 
-        //for (int i = 0; i < x; i++)
-        //{
-        //    Debug.Log("Creating enemy number: " + i);
-        //}
-        //poseFail.SetActive(true);
+            poseFail.SetActive(false);
+        }
     }
 }
