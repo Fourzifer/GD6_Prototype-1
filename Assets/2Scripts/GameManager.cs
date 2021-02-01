@@ -114,6 +114,9 @@ public class GameManager : MonoBehaviour
 
         poseFail.SetActive(true);
 
+        currentScore -= scorePerNote; /** currentMultiplier;*/
+        scoreText.text = "Score: " + currentScore;
+
         //currentMultiplier = 1;
         //multiplierTracker = 0;
 
