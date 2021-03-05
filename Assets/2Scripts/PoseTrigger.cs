@@ -38,17 +38,17 @@ public class PoseTrigger : MonoBehaviour
         //    poseRenderer.sprite = pose;
         //}
 
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().currentScore >= 300)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().currentScore >= 1000)
         {
             poseRenderer.sprite = pose1;
         }
 
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().currentScore >= 600)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().currentScore >= 2500)
         {
             poseRenderer.sprite = pose2;
         }
 
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().currentScore >= 900)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().currentScore >= 5000)
         {
             poseRenderer.sprite = pose3;
         }

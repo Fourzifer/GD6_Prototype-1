@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     GameObject startText;
     GameObject poseFail;
+    GameObject gameOverText;
 
     public AudioSource theMusic;
 
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
         startText = GameObject.Find("StartText");
         poseFail = GameObject.Find("PoseFail");
         poseFail.SetActive(false);
+        gameOverText = GameObject.Find("GameOverText");
+        gameOverText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,6 +61,12 @@ public class GameManager : MonoBehaviour
 
                 startText.SetActive(false);
             }
+        }
+
+        if (!theMusic.isPlaying && startPlaying)
+        {
+            Debug.Log("The Music Stopped");
+            gameOverText.SetActive(true);
         }
     }
 
@@ -104,6 +113,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Missed Note");
 
         poseFail.SetActive(true);
+
+        currentScore -= scorePerNote; /** currentMultiplier;*/
+        scoreText.text = "Score: " + currentScore;
 
         //currentMultiplier = 1;
         //multiplierTracker = 0;
